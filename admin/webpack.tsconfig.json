@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "./.build/",
+    "noImplicitAny": true,
+    "module": "es6",
+    "target": "es5",
+    "jsx": "react",
+    "jsxFactory": "m",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true
+  }
+}

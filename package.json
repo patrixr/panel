@@ -1,0 +1,59 @@
+{
+  "name": "panel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "predev": "npm run clean",
+    "dev": "BASE_URL=\"http://localhost:3333/admin\" concurrently \"npm:webpack:server\" \"npm:koa:example\"",
+    "webpack": "(cd admin && webpack && cp index.* ../dist/admin)",
+    "webpack:server": "(cd admin && webpack server)",
+    "koa:example": "ts-node examples/koa.ts",
+    "test": "ava --verbose",
+    "clean": "rm -rf ./dist",
+    "tsc": "tsc"
+  },
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@koa/router": "^10.0.0",
+    "change-case": "^4.1.2",
+    "classnames": "^2.3.1",
+    "eta": "^1.12.1",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-send": "^5.0.1",
+    "mithril": "^2.0.4",
+    "mobx": "^6.3.1",
+    "typestyle": "^2.1.0",
+    "xterm": "^4.13.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-typescript": "^7.13.0",
+    "@types/koa": "^2.13.1",
+    "@types/koa__router": "^8.0.4",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-compose": "^3.2.5",
+    "@types/koa-send": "^4.1.2",
+    "@types/mithril": "^2.0.7",
+    "ava": "^3.15.0",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.1.0",
+    "css-loader": "^5.2.4",
+    "ts-loader": "^9.1.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
